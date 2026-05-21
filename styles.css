@@ -34,3 +34,15 @@ h1,h2,h3,h4,h5,h6 {
 .hero-container { display: grid; grid-template-columns: 1fr 1fr; max-width: 1200px; margin: 0 auto; }
 .hero-title { font-size: 5rem; }
 .hero-title .red { color: var(--red); }
+
+/* Estilo do menu e cards adicionado por Otavio */
+.section { padding: 80px 40px; }
+.menu { background: var(--cream); color: var(--green-dark); }
+.menu-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; max-width: 1200px; margin: 0 auto;
+}
+.pizza-card { background: #fff; border-radius: 8px; overflow: hidden; }
+.pizza-card-img { width: 100%; height: 250px; object-fit: cover; }
+.pizza-card-body { padding: 20px; }
+.pizza-price { color: var(--red); font-size: 1.5rem; }
