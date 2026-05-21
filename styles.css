@@ -1,0 +1,36 @@
+/* === PAPA'S MAGLEONI PIZZARIA === */
+:root {
+  --green-dark: #1E3D2B;
+  --green-olive: #6B8E23;
+  --red: #B22B2B;
+  --cream: #F2E8D1;
+  --brown: #8C4A2F;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--green-dark);
+  color: var(--cream);
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Bebas Neue', sans-serif;
+}
+.navbar {
+  position: fixed; top:0; left:0; width:100%; z-index:1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 40px; background: rgba(30,61,43,0.95);
+  border-bottom: 3px solid var(--red);
+}
+.nav-logo { color: var(--cream); text-decoration: none; display:flex; align-items:center; gap:8px; }
+.nav-logo .accent { color: var(--red); }
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { color: var(--cream); text-decoration:none; }
+
+.hero {
+  min-height: 100vh; display:flex; align-items:center;
+  background: radial-gradient(ellipse at 30% 50%, #2a5a3a 0%, var(--green-dark) 70%);
+}
+.hero-container { display: grid; grid-template-columns: 1fr 1fr; max-width: 1200px; margin: 0 auto; }
+.hero-title { font-size: 5rem; }
+.hero-title .red { color: var(--red); }
