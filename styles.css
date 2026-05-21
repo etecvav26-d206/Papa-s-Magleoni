@@ -49,3 +49,9 @@ h1,h2,h3,h4,h5,h6 {
 
 /* Estilos de Contato adicionados por Pedro */
 .contact { background: var(--green-dark); color: var(--cream); text-align: center; }
+
+/* Correções de layout responsivo de Otavio */
+@media(max-width: 900px) {
+  .hero-container { grid-template-columns: 1fr; text-align: center; }
+  .hero-title { font-size: 3rem; }
+}
