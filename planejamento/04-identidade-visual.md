@@ -79,7 +79,7 @@ body {
 A logo da Papa's Magleoni é uma imagem em formato **PNG** (`logo-magleoni.png`) que utiliza a fonte **Bebas Neue**:
 
 > [!NOTE]
-> As fotos das pizzas do cardápio e a própria logo oficial em PNG foram **geradas por Inteligência Artificial (IA)** para fins acadêmicos.
+> Tanto as fotos das pizzas do cardápio quanto o logotipo oficial foram **gerados por Inteligência Artificial (IA)** para fins didáticos e acadêmicos.
 
 ```
 PAPA'S MAGLEONI
@@ -88,15 +88,15 @@ PAPA'S MAGLEONI
 - **"PAPA'S"** — em cor creme (`#F2E8D1`)
 - **"MAGLEONI"** — em vermelho (`#B22B2B`)
 
-A logo é acompanhada de um ícone SVG circular simples que representa uma carinha sorridente, reforçando o conceito de alegria e reunião familiar.
+A logo é acompanhada por um ícone estilizado que representa o clássico forno a lenha italiano em arco de tijolos com uma chama centralizada, reforçando o conceito de calor, tradição e cozimento artesanal de alta qualidade.
 
 ### Variações
 
 | Versão | Uso |
 |--------|-----|
-| Logo completa (ícone + texto) | Navbar |
-| Texto "PAPA'S MAGLEONI · PIZZARIA" | Footer |
-| Ícone sorridente sozinho | Favicon, redes sociais |
+| Logo completa (ícone do forno + texto) | Navbar e cabeçalho principal |
+| Assinatura textual "PAPA'S MAGLEONI · PIZZARIA" | Footer (rodapé) |
+| Ícone do forno sozinho | Favicon, favicon.svg e redes sociais |
 
 ---
 

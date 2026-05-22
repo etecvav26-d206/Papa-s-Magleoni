@@ -40,7 +40,10 @@ h1,h2,h3,h4,h5,h6 {
 .nav-logo {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 1.8rem; color: var(--cream);
-  text-decoration: none; display:flex; align-items:center; gap:8px;
+  text-decoration: none; display:flex; align-items:center; gap:4px;
+}
+.nav-logo:hover .nav-logo-icon {
+  transform: rotate(8deg) scale(1.08);
 }
 .nav-logo .accent { color: var(--red); }
 .nav-links { display:flex; gap:28px; list-style:none; }

@@ -1,49 +1,51 @@
 # 🖼️ Logo — Papa's Magleoni Pizzaria
 
-## Descrição
+## Descrição do Logotipo
 
-A logo da Papa's Magleoni é uma imagem em formato **PNG** transparente (`logo-magleoni.png`), integrando o texto ao ícone circular.
+O logotipo oficial da **Papa's Magleoni** é um brasão minimalista e moderno em formato **PNG** (`logo-magleoni.png`), que integra perfeitamente elementos tradicionais da culinária italiana com um design de alta qualidade.
 
 > [!NOTE]
-> Tanto o logotipo oficial em formato PNG quanto todas as imagens de pizzas utilizadas no site foram **geradas por Inteligência Artificial (IA)** para fins didáticos, garantindo um visual exclusivo e profissional para o projeto acadêmico.
+> Tanto o logotipo oficial quanto as fotos de pizzas utilizadas no projeto foram **geradas por Inteligência Artificial (IA)** para fins didáticos, garantindo um visual exclusivo, uniforme e extremamente profissional para esta atividade acadêmica.
 
-### Composição
+---
+
+## 🎨 Conceito e Elementos Visuais
+
+O design é centrado em três pilares fundamentais: **Tradição, Calor e Sabor**.
 
 ```
-    ☺      ← Ícone SVG circular (carinha sorridente)
-PAPA'S     ← Cor Creme (#F2E8D1) — Fonte: Bebas Neue
-MAGLEONI     ← Cor Vermelho (#B22B2B) — Fonte: Bebas Neue
+       ▲  [Arco do Forno]
+      / \
+     | ♨ | [Chama de Fogo]  ← Ícone centralizado em espaço negativo
+      \ /
+    PAPA'S                  ← Cor Creme (#F2E8D1) — Fonte: Bebas Neue
+   MAGLEONI                 ← Cor Vermelha (#B22B2B) — Fonte: Bebas Neue
 ```
 
-### Detalhes Técnicos
+1. **O Arco do Forno (Stone Oven Arch):** Representa o coração da pizzaria: o clássico forno a lenha onde as pizzas são assadas de forma artesanal a 450°C. Simboliza a estrutura robusta, o acolhimento e o lar.
+2. **A Chama Dourada:** Desenrolando-se no centro do arco, a chama representa a energia, a paixão pela culinária italiana e o inconfundível sabor defumado que só a lenha verdadeira consegue proporcionar.
+3. **Equilíbrio Cromático:** O verde escuro de fundo contrasta ricamente com o creme e o vermelho, formando a clássica bandeira da Itália de maneira sutil e sofisticada.
 
-- **Fonte**: Bebas Neue (Google Fonts)
-- **Tamanho na navbar**: 1.8rem
-- **Ícone**: SVG circular de 28x28px com stroke vermelho (#B22B2B)
-- **Espaçamento**: 8px entre ícone e texto
+---
 
-### Código SVG do Ícone
+## 📐 Detalhes Técnicos
 
-```html
-<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B22B2B" stroke-width="2">
-  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-  <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-  <circle cx="9" cy="10" r="1" fill="#B22B2B"/>
-  <circle cx="15" cy="10" r="1" fill="#B22B2B"/>
-</svg>
-```
+- **Tipografia:** 
+  - `Bebas Neue` (Google Fonts) — Usada para o nome principal `PAPA'S MAGLEONI` em caixa alta, trazendo impacto, robustez e uma estética clássica de pizzarias tradicionais.
+  - `Montserrat` (Google Fonts) — Usada para textos secundários e slogans.
+- **Tamanho na Navbar:** Redimensionado proporcionalmente para a barra de navegação (cerca de 35px de altura) com formato circular.
+- **Paleta de Cores do Logo:**
+  - **Fundo:** Verde Escuro `#1E3D2B`
+  - **Texto "PAPA'S":** Creme `#F2E8D1`
+  - **Texto "MAGLEONI":** Vermelho `#B22B2B`
+  - **Ícone do Forno/Chama:** Traços elegantes em Creme `#F2E8D1` com chamas em Vermelho e Ouro.
 
-### Variações de Uso
+---
 
-| Versão | Onde é usada |
-|--------|-------------|
-| Ícone + "PAPA'S MAGLEONI" | Navbar (topo do site) |
-| "PAPA'S MAGLEONI · PIZZARIA" | Footer (rodapé) |
-| Apenas ícone circular | Favicon, ícone de app |
+## 🧭 Variações e Aplicação no Projeto
 
-### Conceito
-
-A carinha sorridente transmite:
-- **Alegria** — a experiência de comer uma boa pizza
-- **Acolhimento** — o cliente é recebido com um sorriso
-- **Informalidade** — ambiente familiar e descontraído
+| Versão | Onde é utilizada | Função |
+| :--- | :--- | :--- |
+| **Logotipo Completo (Forno + Texto)** | Navbar (topo do site) | Identificação imediata da marca no portal |
+| **Logotipo Circular (Badge)** | Favicon e Redes Sociais | Ícone de atalho e foto de perfil simplificada |
+| **Assinatura Textual** | Footer (rodapé) | Encerramento elegante da página junto aos colaboradores |
