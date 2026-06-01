@@ -100,5 +100,3 @@ require_once 'includes/header_admin.php';
 <?php require_once 'includes/footer_admin.php'; ?>
 
 <!-- Validação de seleção corrigida por phznorte777 -->
-
-<!-- Validação de seleção corrigida por phznorte777 -->
