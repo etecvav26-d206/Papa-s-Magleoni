@@ -140,7 +140,7 @@ Todos os ícones do site são **SVG inline** (sem dependência de bibliotecas ex
 - Ícones de navegação social (Instagram, Facebook, WhatsApp)
 - Ícones de contato (localização, telefone, relógio)
 - Ícones decorativos (chama, planta, coração, relógio)
-- Ícone da logo (forno a lenha clássico)
+- Ícone da logo (chama dourada estilizada do forno)
 
 ---
 

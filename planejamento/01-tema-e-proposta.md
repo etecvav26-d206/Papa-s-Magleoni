@@ -44,13 +44,13 @@ Futuramente, o site também contará com um **painel administrativo (CRUD)** par
 
 O site resolve os seguintes problemas:
 
-1. **Falta de presença digital** — Muitas pizzarias ainda dependem apenas de panfletos e redes sociais. O site oferece uma presença profissional e confiável na internet.
+1. **Falta de um canal oficial de divulgação** — Muitas pizzarias de bairro dependem só de panfletos de papel (que as pessoas sempre perdem) ou posts no Instagram que somem rápido. O site garante um ponto fixo e confiável na internet para achar o cardápio.
 
-2. **Dificuldade de acesso ao cardápio** — Clientes podem consultar o cardápio completo com fotos e preços antes mesmo de visitar o local ou ligar para pedir.
+2. **Dificuldade para achar o cardápio e preços** — Em vez de ter que ficar caçando fotos antigas de cardápio no WhatsApp ou Instagram, o cliente consegue ver tudo atualizado com um clique, direto no celular.
 
-3. **Processo de reserva manual** — Com o formulário de contato, clientes podem fazer reservas de mesa de forma rápida e organizada.
+3. **Reservas confusas por telefone** — Com o formulário simples do site, o cliente envia os dados da reserva e a pizzaria consegue organizar as mesas de forma simples.
 
-4. **Gestão do cardápio** — Com o futuro painel administrativo, os donos poderão atualizar preços, adicionar novos sabores e remover itens sem depender de um programador.
+4. **Dependência de terceiros para atualizar preços** — Com o painel administrativo (CRUD), a própria equipe da pizzaria consegue alterar preços e adicionar novos sabores na hora, sem ter que pagar um programador toda vez.
 
 ---
 

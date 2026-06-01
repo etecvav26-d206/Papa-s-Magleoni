@@ -80,11 +80,10 @@ trabalho/
 
 | Nome | Função |
 |------|--------|
-| — | — |
-| — | — |
-| — | — |
-
-> *Preencher com os nomes dos integrantes do grupo.*
+| **Otávio Biazzi** | Desenvolvimento Frontend, Banco de Dados e Integração da Logo |
+| **Laura Gonçalves da Cruz** | Identidade Visual, Planejamento e Estruturação de Markdown |
+| **Pedro Godoi (phznorte777)** | Desenvolvimento Backend (PHP/PDO), CRUD e Validação de Formulários |
+| **Pedro Miranda (M1randaPHM)** | Ajustes de Layout, Responsividade e Testes de Qualidade |
 
 ---
 
