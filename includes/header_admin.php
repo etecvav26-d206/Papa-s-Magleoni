@@ -192,6 +192,7 @@
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar" style="background: rgba(30,61,43,0.98);">
   <a href="index.php" class="nav-logo">
+    <img src="images/logo-magleoni.png" alt="Logo" class="nav-logo-icon">
     PAPA'S <span class="accent">MAGLEONI</span> <span style="font-size: 0.9rem; font-family:'Montserrat',sans-serif; font-weight: 500; opacity: 0.6; margin-left: 10px;">(PAINEL ADMIN)</span>
   </a>
   <ul class="nav-links">

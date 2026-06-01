@@ -28,6 +28,7 @@ try {
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <a href="#" class="nav-logo">
+    <img src="images/logo-magleoni.png" alt="Logo" class="nav-logo-icon">
     PAPA'S <span class="accent">MAGLEONI</span>
   </a>
   <ul class="nav-links">
@@ -174,7 +175,8 @@ try {
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-logo">
+  <div class="footer-logo" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <img src="images/logo-magleoni.png" alt="Logo" class="footer-logo-icon" style="height: 40px; width: auto; object-fit: contain;">
     PAPA'S <span class="accent">MAGLEONI</span>
   </div>
   <p class="footer-tagline">Desenvolvido em 2026 para fins didáticos (Trabalho Escolar)</p>
