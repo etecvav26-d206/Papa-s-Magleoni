@@ -42,6 +42,13 @@ h1,h2,h3,h4,h5,h6 {
   font-size: 1.8rem; color: var(--cream);
   text-decoration: none; display:flex; align-items:center; gap:4px;
 }
+.nav-logo-icon {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 6px;
+  transition: transform 0.3s ease;
+}
 .nav-logo:hover .nav-logo-icon {
   transform: rotate(8deg) scale(1.08);
 }
@@ -349,3 +356,5 @@ h1,h2,h3,h4,h5,h6 {
   .hero-pizza-glow { width: 220px; height: 220px; }
   .hero-pizza-label { font-size: 1.2rem; }
 }
+
+/* Estilos adicionais para painel administrativo adicionados na branch beta */

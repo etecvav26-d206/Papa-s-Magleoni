@@ -1,3 +1,15 @@
+<?php
+require_once 'config/conexao.php';
+
+// Buscar pizzas do banco de dados
+try {
+    $stmt = $pdo->query("SELECT * FROM pizzas ORDER BY id ASC");
+    $pizzas = $stmt->fetchAll();
+} catch (\PDOException $e) {
+    $pizzas = [];
+    $error_msg = $e->getMessage();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -16,12 +28,14 @@
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <a href="#" class="nav-logo">
+    <img src="images/logo-magleoni.png" alt="Logo" class="nav-logo-icon">
     PAPA'S <span class="accent">MAGLEONI</span>
   </a>
   <ul class="nav-links">
     <li><a href="#inicio">Início</a></li>
     <li><a href="#cardapio">Destaques</a></li>
     <li><a href="#contato">Contato</a></li>
+    <li><a href="gerenciar.php" style="color: var(--red); border: 1px solid rgba(178,43,43,0.3); padding: 4px 12px; border-radius: 15px; transition: all 0.3s;" onmouseover="this.style.background='var(--red)'; this.style.color='var(--cream)';" onmouseout="this.style.background='transparent'; this.style.color='var(--red)';">Painel Admin</a></li>
   </ul>
 </nav>
 
@@ -87,47 +101,32 @@
     <p class="section-desc">Cada pizza é uma obra-prima — massa artesanal, ingredientes frescos e o calor do forno a lenha.</p>
   </div>
   <div class="menu-grid">
-    <!-- Card 1 -->
-    <div class="pizza-card">
-      <div class="pizza-card-img-wrap">
-        <img class="pizza-card-img" src="images/pizza-margherita.png" alt="Pizza Margherita" loading="lazy">
-        <span class="pizza-card-badge">Clássica</span>
+    <?php if (empty($pizzas)): ?>
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--brown);">
+        <p>Nenhuma pizza cadastrada no momento ou erro ao conectar com o banco de dados.</p>
+        <?php if (isset($error_msg)): ?>
+          <small style="opacity: 0.7; display: block; margin-top: 10px;">Erro: <?= htmlspecialchars($error_msg) ?></small>
+        <?php endif; ?>
       </div>
-      <div class="pizza-card-body">
-        <h3>Margherita</h3>
-        <p>Molho de tomate San Marzano, mussarela de búfala, manjericão fresco e azeite extra virgem.</p>
-        <div class="pizza-card-footer">
-          <span class="pizza-price">R$ 42,90</span>
+    <?php else: ?>
+      <?php foreach ($pizzas as $pizza): ?>
+        <div class="pizza-card">
+          <div class="pizza-card-img-wrap">
+            <img class="pizza-card-img" src="<?= htmlspecialchars($pizza['imagem']) ?>" alt="Pizza <?= htmlspecialchars($pizza['nome']) ?>" loading="lazy">
+            <?php if (!empty($pizza['badge'])): ?>
+              <span class="pizza-card-badge"><?= htmlspecialchars($pizza['badge']) ?></span>
+            <?php endif; ?>
+          </div>
+          <div class="pizza-card-body">
+            <h3><?= htmlspecialchars($pizza['nome']) ?></h3>
+            <p><?= htmlspecialchars($pizza['descricao']) ?></p>
+            <div class="pizza-card-footer">
+              <span class="pizza-price">R$ <?= number_format($pizza['preco'], 2, ',', '.') ?></span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <!-- Card 2 -->
-    <div class="pizza-card">
-      <div class="pizza-card-img-wrap">
-        <img class="pizza-card-img" src="images/pizza-pepperoni.png" alt="Pizza Pepperoni" loading="lazy">
-        <span class="pizza-card-badge">Favorita</span>
-      </div>
-      <div class="pizza-card-body">
-        <h3>Pepperoni</h3>
-        <p>Generosas fatias de pepperoni artesanal, mussarela derretida e molho de tomate caseiro.</p>
-        <div class="pizza-card-footer">
-          <span class="pizza-price">R$ 48,90</span>
-        </div>
-      </div>
-    </div>
-    <!-- Card 3 -->
-    <div class="pizza-card">
-      <div class="pizza-card-img-wrap">
-        <img class="pizza-card-img" src="images/pizza-quatro-queijos.png" alt="Pizza Quatro Queijos" loading="lazy">
-      </div>
-      <div class="pizza-card-body">
-        <h3>Quatro Queijos</h3>
-        <p>Mussarela, gorgonzola, parmesão e provolone — uma explosão de sabor em cada mordida.</p>
-        <div class="pizza-card-footer">
-          <span class="pizza-price">R$ 52,90</span>
-        </div>
-      </div>
-    </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
   </div>
 </section>
 
@@ -176,7 +175,8 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-logo">
+  <div class="footer-logo" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+    <img src="images/logo-magleoni.png" alt="Logo" class="footer-logo-icon" style="height: 40px; width: auto; object-fit: contain;">
     PAPA'S <span class="accent">MAGLEONI</span>
   </div>
   <p class="footer-tagline">Desenvolvido em 2026 para fins didáticos (Trabalho Escolar)</p>
@@ -192,6 +192,43 @@
     <p>© 2026 Papa's Magleoni. Projeto Acadêmico Sem Fins Lucrativos.</p>
   </div>
 </footer>
+
+<script>
+  // Script para mudar fotos no Hero interativamente se existirem
+  const pizzaImages = [
+    'images/pizza-pepperoni.png',
+    'images/pizza-margherita.png',
+    'images/pizza-quatro-queijos.png'
+  ];
+  const pizzaLabels = [
+    'Pepperoni Especial',
+    'Margherita Clássica',
+    'Quatro Queijos Suprema'
+  ];
+  let currentImgIndex = 0;
+  
+  const heroImg = document.querySelector('.hero-pizza-img');
+  const heroLabel = document.querySelector('.hero-pizza-label');
+  
+  if (heroImg && heroLabel) {
+    heroImg.addEventListener('click', () => {
+      currentImgIndex = (currentImgIndex + 1) % pizzaImages.length;
+      heroImg.style.opacity = '0';
+      heroImg.style.transform = 'rotate(90deg) scale(0.8)';
+      
+      setTimeout(() => {
+        heroImg.src = pizzaImages[currentImgIndex];
+        heroLabel.textContent = pizzaLabels[currentImgIndex];
+        heroImg.style.opacity = '1';
+        heroImg.style.transform = 'rotate(0deg) scale(1)';
+      }, 300);
+    });
+    
+    // cursor pointers
+    heroImg.style.cursor = 'pointer';
+    heroImg.title = 'Clique para mudar o sabor!';
+  }
+</script>
 
 </body>
 </html>
