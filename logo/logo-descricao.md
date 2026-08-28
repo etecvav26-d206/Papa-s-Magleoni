@@ -1,16 +1,11 @@
 # Logotipo — Papa's Magleoni
 
-Aqui está o logotipo oficial da Papa's Magleoni Pizzaria. 
+![Logotipo oficial](logo-magleoni.png)
 
-A imagem está salva no repositório como `logo-magleoni.png`.
+A logo oficial apresenta a letra M integrada a uma fatia de pizza, com traços dourados e detalhes vermelhos sobre fundo verde. Um contorno circular envolve o símbolo e o nome Papa's Magleoni Pizzeria.
 
-## Visualização
-![Logotipo Oficial](logo-magleoni.png)
+O ChatGPT Images 2 foi utilizado para auxiliar na criação da logo. A imagem original foi preservada, sem redesenho, e aplicada no site por meio de `images/logo-magleoni.png`. A cópia desta pasta é idêntica.
 
-## Sobre a Logo
-A logo oficial da Papa's Magleoni foi projetada de forma limpa e impactante. O logotipo é composto por:
+Veja a [declaração de uso de IA](../docs/DECLARACAO-IA.md).
 
-- **Tipografia vintage**: O nome "PAPA's" é disposto em arco na parte superior em uma tipografia serifada clássica, com cor creme (#F2E8D1), remetendo à tradição e ao aconchego das pizzarias italianas artesanais de antigamente.
-- **Ícone central**: Uma chama dourada estilizada no centro, simbolizando o calor, o fogo e a tradição das pizzas assadas diretamente no forno a lenha, que é o coração da nossa pizzaria.
-
-Essa identidade visual foi pensada para transmitir sofisticação, qualidade artesanal e o calor de reunir pessoas para saborear uma verdadeira pizza italiana.
+No cabeçalho, rodapé, login e painel, o CSS enquadra a imagem em um selo circular e oculta as margens quadradas. O arquivo original permanece intacto.
