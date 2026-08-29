@@ -45,13 +45,21 @@ if (!is_string($entity) || !isset($entities[$entity]) || !is_string($action)
     http_response_code(404);
     exit('Cadastro ou ação não encontrado.');
 }
+
 $method = $_SERVER['REQUEST_METHOD'];
-if (!in_array($method, ['GET', 'POST'], true) || ($method === 'POST' && $action === 'list')) {
+if (
+    !in_array($method, ['GET', 'POST'], true)
+    || ($method === 'POST' && $action === 'list')
+) {
     header('Allow: GET, POST');
     http_response_code(405);
     exit('Método não permitido.');
 }
-if ($method === 'POST') { verify_csrf(); }
+
+if ($method === 'POST') {
+    verify_csrf();
+}
+
 $meta = $entities[$entity];
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
 $categories = $pdo
@@ -75,15 +83,23 @@ function url(string $entity, string $action = 'list', ?int $id = null): string
 }
 
 if (in_array($action, ['edit', 'delete'], true)) {
-    if (!$id) { http_response_code(404); exit('Registro não encontrado.'); }
-    $stmt = $pdo->prepare("SELECT * FROM $entity WHERE id=?");
+    if (!$id) {
+        http_response_code(404);
+        exit('Registro não encontrado.');
+    }
+
+    $stmt = $pdo->prepare("SELECT * FROM $entity WHERE id = ?");
     $stmt->execute([$id]);
     $item = $stmt->fetch();
-    if (!$item) { http_response_code(404); exit('Registro não encontrado.'); }
+
+    if (!$item) {
+        http_response_code(404);
+        exit('Registro não encontrado.');
+    }
 }
 
 if ($method === 'POST' && $action === 'delete') {
-    $pdo->prepare("DELETE FROM $entity WHERE id=?")->execute([$id]);
+    $pdo->prepare("DELETE FROM $entity WHERE id = ?")->execute([$id]);
     $_SESSION['flash'] = 'Registro excluído com sucesso.';
     header('Location: ' . url($entity), true, 303);
     exit;
