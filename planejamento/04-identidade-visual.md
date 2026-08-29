@@ -1,21 +1,18 @@
-# 5️⃣ Identidade Visual
+# Identidade visual
 
-## Nome da Empresa
-Papa's Magleoni Pizzaria
-Slogan: "Sabor que reúne, momentos que ficam."
+Papa's Magleoni é uma pizzaria fictícia de um projeto escolar. O site usa a logo oficial em `images/logo-magleoni.png`, também preservada em `logo/`. Ela apresenta um M com uma fatia de pizza, traços dourados e detalhes vermelhos sobre fundo verde. O ChatGPT Images 2 auxiliou na sua criação. A imagem aparece no cabeçalho, rodapé, login, painel e ícone das abas, sem redesenho.
 
-## Paleta de Cores
-A paleta foi inspirada nas cores tradicionais da Itália, mas focando em tons quentes e premium:
-- Verde Escuro: #1E3D2B (usado no fundo das seções, cabeçalho e rodapé)
-- Vermelho: #B22B2B (usado nos botões, preços e destaques)
-- Creme: #F2E8D1 (usado nos textos claros, títulos e fundo do cardápio)
-- Marrom: #8C4A2F (usado nos textos secundários e descrições das pizzas)
+O visual mantém uma apresentação simples, com títulos serifados, destaques em vermelho, fotos amplas e cartões com cantos discretamente arredondados. O acabamento mantém preços alinhados, cantos discretos e a abertura escura do cardápio, sem animações elaboradas ou bibliotecas visuais. A página inicial apresenta o vídeo, alguns sabores, uma explicação do projeto, depoimentos, contato e declaração de IA.
 
-## Tipografia
-- Bebas Neue: Para títulos maiores e destaques na navegação (trazendo um ar de pizzaria clássica e italiana)
-- Montserrat: Para o corpo do texto, descrições e parágrafos (garantindo ótima legibilidade em celulares)
+| Uso | Valor em `assets/css/styles.css` |
+| --- | --- |
+| Texto principal | `#171512` |
+| Fundo | `#f4efe7` |
+| Cartões | `#fffaf2` |
+| Links e botões | `#bd3d26` |
+| Texto secundário | `#615d57` |
+| Bordas | `#d9d2c8` |
 
-## Logo Oficial
-A logo oficial é composta pelo título clássico arqueado "PAPA'S" na cor creme e o ícone estilizado de uma chama dourada e amarela ao centro, representando o coração da nossa cozinha: o calor e o fogo do forno a lenha tradicional. Ela está salva na pasta logo como `logo-magleoni.png`.
+Títulos usam Playfair Display; textos usam DM Sans, recuperando as fontes originais do site. Os arquivos são servidos localmente pela pasta `assets/fonts/`, com licenças SIL Open Font License incluídas; não dependem de internet. O painel mantém sua folha de estilos própria em `assets/css/admin.css`.
 
-![Logo Oficial](../logo/logo-magleoni.png)
+Endereço e empresa são fictícios. A quantidade de sabores exibida vem do banco de dados.

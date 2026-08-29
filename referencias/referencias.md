@@ -1,38 +1,26 @@
-# 📚 Referências — Papa's Magleoni Pizzaria
+# Referências e materiais
 
-## Design e Inspiração
+## Orientações acadêmicas
 
-| Referência | Descrição | Link |
-|------------|-----------|------|
-| Google Fonts | Fontes Bebas Neue e Montserrat | [fonts.google.com](https://fonts.google.com) |
-| Lucide Icons | Ícones SVG utilizados nos diferenciais e elementos decorativos | [lucide.dev](https://lucide.dev) |
-| Coolors | Geração da paleta de cores italiana | [coolors.co](https://coolors.co) |
+- [Repositório do professor](https://github.com/ronildo-ferreira/ronildo-human-layer): requisitos e orientações da atividade.
+- [Política de uso de IA](https://github.com/ronildo-ferreira/ronildo-human-layer/blob/main/01-EtecVAV/politica-de-uso-de-ia.md): transparência sobre ferramentas, etapas, finalidades e validação.
 
-## Tecnologias
+## Documentação técnica para consulta
 
-| Tecnologia | Versão | Uso |
-|------------|--------|-----|
-| HTML5 | — | Estrutura semântica do site |
-| CSS3 | — | Estilização, animações, responsividade |
-| JavaScript (ES6+) | — | Interatividade, Intersection Observer, seletor de pizzas |
+- [PHP — PDO](https://www.php.net/manual/pt_BR/book.pdo.php): conexão e consultas ao banco.
+- [PHP — password_hash](https://www.php.net/manual/pt_BR/function.password-hash.php): armazenamento de hash de senha.
+- [MDN — CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout): organização de páginas e cartões.
+- [MDN — elemento video](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video): reprodução de vídeo em HTML.
 
-## Conceitos Aplicados
+## Recursos presentes
 
-| Conceito | Onde foi aplicado |
-|----------|-------------------|
-| Mobile First | Layout responsivo com breakpoints em 900px e 600px |
-| Glassmorphism | Navbar com backdrop-filter: blur |
-| CSS Custom Properties | Variáveis de cor no :root |
-| CSS Grid | Layout das seções (hero, cardápio, contato) |
-| Intersection Observer API | Animações de reveal ao scroll e contadores |
-| Lazy Loading | Imagens do cardápio com loading="lazy" |
-| Scroll Behavior Smooth | Navegação suave entre âncoras |
-| BEM (parcial) | Nomenclatura de classes CSS |
+O projeto usa PHP/PDO, MySQL ou MariaDB, HTML, CSS e JavaScript sem frameworks. As fontes públicas são Playfair Display e DM Sans. As cópias locais vieram do repositório Google Fonts, com licenças SIL Open Font License preservadas em `assets/fonts/`. Não há chamadas ao serviço Google Fonts durante o uso do site nem dependência de bibliotecas de ícones.
 
-## Artigos e Documentação
+As imagens e logos estão nas pastas de mídia do projeto. O ChatGPT Images 2 auxiliou na criação da logo oficial, preservada sem alterações nesta revisão. A origem e a autorização de uso de cada material devem ser conferidas pelo grupo antes de publicação.
 
-- [MDN Web Docs — CSS Grid](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_Grid_Layout)
-- [MDN Web Docs — Intersection Observer](https://developer.mozilla.org/pt-BR/docs/Web/API/Intersection_Observer_API)
-- [MDN Web Docs — backdrop-filter](https://developer.mozilla.org/pt-BR/docs/Web/CSS/backdrop-filter)
-- [Web.dev — Responsive Design](https://web.dev/responsive-web-design-basics/)
-- [CSS-Tricks — A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+Segundo o responsável pelo projeto, o Gemini auxiliou na produção de `videos/montagem-margherita.mp4`. O modelo exato e os termos de uso devem ser conferidos no histórico da ferramenta. A [declaração de IA](../docs/DECLARACAO-IA.md) registra esse relato e o apoio à revisão técnica.
+
+## Fontes tipográficas
+
+- [DM Sans — arquivos e licença](https://github.com/google/fonts/tree/main/ofl/dmsans)
+- [Playfair Display — arquivos e licença](https://github.com/google/fonts/tree/main/ofl/playfairdisplay)
