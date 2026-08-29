@@ -110,7 +110,11 @@ if ($method === 'POST' && in_array($action, ['create', 'edit'], true)) {
     $data = [];
     foreach ($meta['fields'] as $field => $label) {
         $raw = $_POST[$field] ?? '';
-        if (!is_string($raw)) { $error = 'Formato de campo inválido.'; $raw = ''; }
+        if (!is_string($raw)) {
+            $error = 'Formato de campo inválido.';
+            $raw = '';
+        }
+
         $data[$field] = trim($raw);
         if (isset($limits[$field])) {
             $length = preg_match_all('/./us', $data[$field]);
@@ -119,20 +123,41 @@ if ($method === 'POST' && in_array($action, ['create', 'edit'], true)) {
             }
         }
     }
-    if ($data['nome'] === '') { $error = 'Informe o nome.'; }
+
+    if ($data['nome'] === '') {
+        $error = 'Informe o nome.';
+    }
+
     if ($entity === 'pizzas') {
         $data['preco'] = str_replace(',', '.', $data['preco']);
         if (!preg_match('/^\d{1,8}(\.\d{1,2})?$/D', $data['preco'])) {
             $error = 'Informe um preço de 0 a 99999999,99, com até duas casas decimais.';
         }
-        if ($data['descricao'] === '') { $error = 'Informe a descrição da pizza.'; }
-        if (!isset($images[$data['imagem']])) { $error = 'Selecione uma imagem da lista.'; }
+
+        if ($data['descricao'] === '') {
+            $error = 'Informe a descrição da pizza.';
+        }
+
+        if (!isset($images[$data['imagem']])) {
+            $error = 'Selecione uma imagem da lista.';
+        }
+
         if ($data['categoria_id'] === '') {
             $data['categoria_id'] = null;
-        } elseif (!ctype_digit($data['categoria_id']) || !in_array((int) $data['categoria_id'], array_map('intval', array_column($categories, 'id')), true)) {
+        } elseif (
+            !ctype_digit($data['categoria_id'])
+            || !in_array(
+                (int) $data['categoria_id'],
+                array_map('intval', array_column($categories, 'id')),
+                true
+            )
+        ) {
             $error = 'Selecione uma categoria existente.';
-        } else { $data['categoria_id'] = (int) $data['categoria_id']; }
+        } else {
+            $data['categoria_id'] = (int) $data['categoria_id'];
+        }
     }
+
     if ($entity === 'depoimentos') {
         if ($data['texto'] === '' || !preg_match('/^[1-5]$/D', $data['nota'])) {
             $error = 'Informe o depoimento e uma nota inteira entre 1 e 5.';
