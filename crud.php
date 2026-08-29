@@ -5,12 +5,38 @@ require_once __DIR__ . '/config/conexao.php';
 
 // Somente nomes desta lista entram no SQL; dados do usuário usam placeholders.
 $entities = [
-    'pizzas' => ['title' => 'Pizzas', 'singular' => 'pizza', 'new' => 'Nova pizza',
-        'fields' => ['categoria_id' => 'Categoria', 'nome' => 'Nome', 'descricao' => 'Descrição', 'preco' => 'Preço', 'badge' => 'Selo', 'imagem' => 'Imagem']],
-    'categorias' => ['title' => 'Categorias', 'singular' => 'categoria', 'new' => 'Nova categoria',
-        'fields' => ['nome' => 'Nome', 'descricao' => 'Descrição']],
-    'depoimentos' => ['title' => 'Depoimentos', 'singular' => 'depoimento', 'new' => 'Novo depoimento',
-        'fields' => ['nome' => 'Cliente', 'texto' => 'Depoimento', 'nota' => 'Nota (1 a 5)']],
+    'pizzas' => [
+        'title' => 'Pizzas',
+        'singular' => 'pizza',
+        'new' => 'Nova pizza',
+        'fields' => [
+            'categoria_id' => 'Categoria',
+            'nome' => 'Nome',
+            'descricao' => 'Descrição',
+            'preco' => 'Preço',
+            'badge' => 'Selo',
+            'imagem' => 'Imagem',
+        ],
+    ],
+    'categorias' => [
+        'title' => 'Categorias',
+        'singular' => 'categoria',
+        'new' => 'Nova categoria',
+        'fields' => [
+            'nome' => 'Nome',
+            'descricao' => 'Descrição',
+        ],
+    ],
+    'depoimentos' => [
+        'title' => 'Depoimentos',
+        'singular' => 'depoimento',
+        'new' => 'Novo depoimento',
+        'fields' => [
+            'nome' => 'Cliente',
+            'texto' => 'Depoimento',
+            'nota' => 'Nota (1 a 5)',
+        ],
+    ],
 ];
 $entity = $entity ?? ($_GET['entity'] ?? 'pizzas');
 $action = $_GET['action'] ?? 'list';
@@ -28,12 +54,18 @@ if (!in_array($method, ['GET', 'POST'], true) || ($method === 'POST' && $action 
 if ($method === 'POST') { verify_csrf(); }
 $meta = $entities[$entity];
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
-$categories = $pdo->query('SELECT id,nome FROM categorias ORDER BY nome')->fetchAll();
+$categories = $pdo
+    ->query('SELECT id, nome FROM categorias ORDER BY nome')
+    ->fetchAll();
 $images = pizza_images();
 $item = [];
 $error = '';
-$limits = ['nome' => $entity === 'categorias' ? 80 : 100, 'badge' => 50,
-    'descricao' => $entity === 'categorias' ? 255 : 5000, 'texto' => 5000];
+$limits = [
+    'nome' => $entity === 'categorias' ? 80 : 100,
+    'badge' => 50,
+    'descricao' => $entity === 'categorias' ? 255 : 5000,
+    'texto' => 5000,
+];
 
 function url(string $entity, string $action = 'list', ?int $id = null): string
 {
