@@ -211,27 +211,85 @@ unset($_SESSION['flash']);
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?= e($meta['title']) ?> — Administração Magleoni</title><link rel="stylesheet" href="assets/css/admin.css"><link rel="icon" type="image/png" href="images/logo-magleoni.png"></head>
 <body>
 <header class="admin-bar">
-    <a class="admin-brand" href="index.php"><span class="logo-seal"><img src="images/logo-magleoni.png" alt="Logo oficial Papa's Magleoni" width="56" height="56"></span><span>PAPA'S MAGLEONI <small>ADMINISTRAÇÃO</small></span></a>
+    <a class="admin-brand" href="index.php">
+        <span class="logo-seal">
+            <img
+                src="images/logo-magleoni.png"
+                alt="Logo oficial Papa's Magleoni"
+                width="56"
+                height="56"
+            >
+        </span>
+        <span>PAPA'S MAGLEONI <small>ADMINISTRAÇÃO</small></span>
+    </a>
     <nav class="admin-nav" aria-label="Administração">
-        <?php foreach ($entities as $key => $info): ?><a href="<?= e(url($key)) ?>" <?= $entity === $key ? 'aria-current="page"' : '' ?>><?= e($info['title']) ?></a><?php endforeach; ?>
+        <?php foreach ($entities as $key => $info): ?>
+            <a
+                href="<?= e(url($key)) ?>"
+                <?= $entity === $key ? 'aria-current="page"' : '' ?>
+            >
+                <?= e($info['title']) ?>
+            </a>
+        <?php endforeach; ?>
         <a href="index.php">Ver site ↗</a>
         <form method="post" action="logout.php"><?= csrf_field() ?><button class="logout-button">Sair</button></form>
     </nav>
 </header>
 <main class="admin-main">
 <?php if ($action === 'list'): ?>
-    <section class="admin-head"><div><p class="admin-kicker">CRUD completo</p><h1><?= e($meta['title']) ?></h1><p>Cadastre, consulte, edite e exclua <?= e(strtolower($meta['title'])) ?>.</p></div><div class="admin-actions"><a class="button-admin button-outline" href="index.php">Voltar ao site</a><a class="button-admin" href="<?= e(url($entity, 'create')) ?>">+ <?= e($meta['new']) ?></a></div></section>
+    <section class="admin-head">
+        <div>
+            <p class="admin-kicker">CRUD completo</p>
+            <h1><?= e($meta['title']) ?></h1>
+            <p>Cadastre, consulte, edite e exclua <?= e(strtolower($meta['title'])) ?>.</p>
+        </div>
+        <div class="admin-actions">
+            <a class="button-admin button-outline" href="index.php">Voltar ao site</a>
+            <a class="button-admin" href="<?= e(url($entity, 'create')) ?>">
+                + <?= e($meta['new']) ?>
+            </a>
+        </div>
+    </section>
     <?php if ($flash): ?><p class="notice" role="status"><?= e($flash) ?></p><?php endif; ?>
     <div class="admin-table-wrap" tabindex="0" role="region" aria-label="Lista de <?= e(strtolower($meta['title'])) ?>">
-    <table class="admin-table"><thead><tr><th scope="col">ID</th><th scope="col"><?= $entity === 'depoimentos' ? 'Cliente' : 'Nome' ?></th><th scope="col">Detalhes</th><?php if ($entity === 'pizzas'): ?><th scope="col">Preço</th><?php endif; ?><th scope="col">Ações</th></tr></thead><tbody>
+    <table class="admin-table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col"><?= $entity === 'depoimentos' ? 'Cliente' : 'Nome' ?></th>
+                <th scope="col">Detalhes</th>
+                <?php if ($entity === 'pizzas'): ?><th scope="col">Preço</th><?php endif; ?>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
     <?php foreach ($items as $row): ?>
         <tr><td>#<?= e($row['id']) ?></td><td><?php if ($entity === 'pizzas'): ?><img class="admin-thumb" src="<?= e(pizza_image($row['imagem'])) ?>" alt=""><?php endif; ?> <?= e($row['nome']) ?></td>
-        <td class="record-details"><?php if ($entity === 'pizzas'): ?><strong><?= e($row['categoria_nome'] ?? 'Sem categoria') ?></strong><br><?= e($row['descricao']) ?><?php if ($row['badge']): ?><br><small><?= e($row['badge']) ?></small><?php endif; ?><?php elseif ($entity === 'categorias'): ?><?= e($row['descricao']) ?><?php else: ?><span aria-label="Nota <?= (int) $row['nota'] ?> de 5"><?= str_repeat('★', max(0, min(5, (int) $row['nota']))) ?></span><br><?= e($row['texto']) ?><?php endif; ?></td>
+        <td class="record-details">
+            <?php if ($entity === 'pizzas'): ?>
+                <strong><?= e($row['categoria_nome'] ?? 'Sem categoria') ?></strong>
+                <br><?= e($row['descricao']) ?>
+                <?php if ($row['badge']): ?><br><small><?= e($row['badge']) ?></small><?php endif; ?>
+            <?php elseif ($entity === 'categorias'): ?>
+                <?= e($row['descricao']) ?>
+            <?php else: ?>
+                <span aria-label="Nota <?= (int) $row['nota'] ?> de 5">
+                    <?= str_repeat('★', max(0, min(5, (int) $row['nota']))) ?>
+                </span>
+                <br><?= e($row['texto']) ?>
+            <?php endif; ?>
+        </td>
         <?php if ($entity === 'pizzas'): ?><td><?= e(money($row['preco'])) ?></td><?php endif; ?>
-        <td><a href="<?= e(url($entity, 'edit', $row['id'])) ?>">Editar</a><a href="<?= e(url($entity, 'delete', $row['id'])) ?>">Excluir</a></td></tr>
+        <td>
+            <a href="<?= e(url($entity, 'edit', $row['id'])) ?>">Editar</a>
+            <a href="<?= e(url($entity, 'delete', $row['id'])) ?>">Excluir</a>
+        </td>
+        </tr>
     <?php endforeach; ?>
     <?php if (!$items): ?><tr><td colspan="<?= $entity === 'pizzas' ? 5 : 4 ?>">Ainda não há registros.</td></tr><?php endif; ?>
-    </tbody></table></div>
+        </tbody>
+    </table>
+    </div>
 <?php else: ?>
     <section class="admin-head"><div><p class="admin-kicker">CRUD completo</p><h1><?= e($action === 'create' ? $meta['new'] : ($action === 'delete' ? 'Excluir ' : 'Editar ') . $meta['singular']) ?></h1><p><?= $action === 'delete' ? 'Esta ação precisa de confirmação.' : 'Preencha os dados abaixo. Os campos opcionais estão indicados.' ?></p></div><a class="button-admin button-outline" href="<?= e(url($entity)) ?>">Voltar</a></section>
     <?php if ($error): ?><p class="notice error" role="alert"><?= e($error) ?></p><?php endif; ?>
