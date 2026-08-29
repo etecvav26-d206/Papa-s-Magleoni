@@ -167,12 +167,17 @@ if ($method === 'POST' && in_array($action, ['create', 'edit'], true)) {
     if ($error === '') {
         $fields = array_keys($meta['fields']);
         $values = array_map(fn($field) => $data[$field], $fields);
+
         if ($action === 'create') {
-            $sql = "INSERT INTO $entity (" . implode(',', $fields) . ') VALUES (' . implode(',', array_fill(0, count($fields), '?')) . ')';
+            $columns = implode(',', $fields);
+            $placeholders = implode(',', array_fill(0, count($fields), '?'));
+            $sql = "INSERT INTO $entity ($columns) VALUES ($placeholders)";
         } else {
-            $sql = "UPDATE $entity SET " . implode(',', array_map(fn($field) => "$field=?", $fields)) . ' WHERE id=?';
+            $assignments = implode(',', array_map(fn($field) => "$field = ?", $fields));
+            $sql = "UPDATE $entity SET $assignments WHERE id = ?";
             $values[] = $id;
         }
+
         try {
             $pdo->prepare($sql)->execute($values);
             $_SESSION['flash'] = $action === 'create' ? 'Registro criado com sucesso.' : 'Registro atualizado com sucesso.';
@@ -189,9 +194,14 @@ if ($method === 'POST' && in_array($action, ['create', 'edit'], true)) {
 $items = [];
 if ($action === 'list') {
     $sql = $entity === 'pizzas'
-        ? 'SELECT pizzas.*,categorias.nome AS categoria_nome FROM pizzas LEFT JOIN categorias ON categorias.id=pizzas.categoria_id ORDER BY pizzas.id DESC'
+        ? 'SELECT pizzas.*, categorias.nome AS categoria_nome
+           FROM pizzas
+           LEFT JOIN categorias ON categorias.id = pizzas.categoria_id
+           ORDER BY pizzas.id DESC'
         : "SELECT * FROM $entity ORDER BY id DESC";
-    $items = $pdo->query($sql)->fetchAll();
+    $items = $pdo
+        ->query($sql)
+        ->fetchAll();
 }
 $flash = $_SESSION['flash'] ?? '';
 unset($_SESSION['flash']);
