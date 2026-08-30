@@ -1,5 +1,5 @@
 <?php
-// Não adicione senhas aqui. Use variáveis de ambiente ou local.php.
+// Não adicionar senhas aqui
 $local = is_file(__DIR__ . '/local.php') ? require __DIR__ . '/local.php' : [];
 function setting(string $key, string $default = ''): string
 {

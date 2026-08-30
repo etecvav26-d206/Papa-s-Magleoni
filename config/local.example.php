@@ -7,5 +7,5 @@ return [
     'DB_USER' => 'root',
     'DB_PASS' => '', // Apenas instalação local do XAMPP.
     'ADMIN_USER' => 'admin',
-    'ADMIN_PASSWORD_HASH' => '$2y$10$sKf5nphwl5.k6t18MFghduE5ef7goiZzWuaAyGTbNPuUR2vUOYrSu', // Senha: admin. SOMENTE demonstração local; troque antes de publicar.
+    'ADMIN_PASSWORD_HASH' => '$2y$10$sKf5nphwl5.k6t18MFghduE5ef7goiZzWuaAyGTbNPuUR2vUOYrSu', // Senha: admin
 ];
