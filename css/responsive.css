@@ -1,0 +1,132 @@
+/* Telas maiores: a base acima permanece utilizável no celular. */
+/* Ajustes de telas maiores ficam separados para facilitar a apresentação. */
+@media (min-width: 760px) {
+  h1 {
+    font-size: 64px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .hero {
+    padding-top: 46px;
+    padding-bottom: 64px;
+    gap: 56px;
+  }
+  .hero h1 {
+    max-width: 510px;
+  }
+  .menu-cover > div {
+    padding: 44px;
+  }
+  .menu-cover h1 {
+    font-size: 58px;
+  }
+  .menu-cover img {
+    height: 100%;
+    min-height: 380px;
+  }
+  .section-head {
+    margin-bottom: 32px;
+  }
+  .section-head h2 {
+    max-width: 520px;
+  }
+  .section-head,
+  .category-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+  }
+  .section-head > p,
+  .category-head > p {
+    max-width: 320px;
+  }
+  .hero,
+  .menu-cover,
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-image {
+    height: 440px;
+  }
+  .cards,
+  .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cards img,
+  .food-grid img {
+    height: 255px;
+  }
+  .food-grid article:only-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .food-grid article:only-child > img {
+    height: 100%;
+    min-height: 255px;
+  }
+  .reviews-grid,
+  .benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .contact-page {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  .contact-page form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-page form > .wide,
+  .contact-page form > .eyebrow,
+  .contact-page noscript {
+    grid-column: 1 / -1;
+  }
+  .cta,
+  .menu-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .menu-bottom > .button {
+    justify-self: start;
+  }
+  .site-footer {
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+  }
+}
+@media (min-width: 961px) {
+  .menu-toggle {
+    display: none;
+  }
+  .site-header nav {
+    display: flex;
+    gap: 22px;
+    margin-left: auto;
+  }
+  .order {
+    display: inline-block;
+    font-size: 12px;
+    text-underline-offset: 4px;
+    white-space: nowrap;
+  }
+}
+@media (min-width: 1020px) {
+  .cards,
+  .food-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
