@@ -1,0 +1,235 @@
+/* Destaques e cardápio */
+/* Cards, categorias e a área do cardápio ficam agrupados nesta parte. */
+.menu,
+.menu-real,
+.customer-reviews,
+.home-about,
+.ai-disclosure {
+  max-width: 1200px;
+  margin: auto;
+  padding: 44px 24px;
+}
+.section-head {
+  margin-bottom: 22px;
+}
+.section-head > p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.cards,
+.food-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.cards article,
+.food-grid article {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.cards img,
+.food-grid img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+.cards article > div {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.cards article > div > small {
+  display: none;
+}
+.cards h3,
+.food-info h3 {
+  margin: 0 0 10px;
+}
+.cards p,
+.food-info p {
+  color: var(--muted);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.cards article > div > b {
+  display: block;
+  margin-top: auto;
+  padding-top: 14px;
+  color: var(--tomato);
+  font-size: 18px;
+}
+.cards i {
+  margin-left: 8px;
+  color: var(--muted);
+  font:
+    normal 11px "DM Sans",
+    sans-serif;
+}
+.full-menu {
+  display: block;
+  width: fit-content;
+  margin: 32px auto 0;
+}
+.menu-cover {
+  max-width: 1152px;
+  width: calc(100% - 48px);
+  margin: 28px auto 0;
+  display: grid;
+  align-items: stretch;
+  background: var(--ink);
+  color: var(--cream);
+  overflow: hidden;
+  border-radius: 3px;
+}
+.menu-cover > div {
+  padding: 36px 28px;
+  align-self: center;
+}
+.menu-cover .eyebrow,
+.menu-cover em {
+  color: #ee947c;
+}
+.menu-cover > div > p:not(.eyebrow) {
+  color: #d2c9bd;
+  max-width: 390px;
+  margin: 24px 0;
+}
+.menu-cover img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.menu-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 12px;
+}
+.menu-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+}
+.menu-tabs a {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+.menu-tabs a:hover {
+  color: var(--tomato);
+  border-color: var(--tomato);
+}
+.menu-note {
+  font-size: 13px;
+  padding: 0 0 26px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+}
+.menu-note p {
+  margin: 0;
+}
+.food-category {
+  padding-bottom: 48px;
+  scroll-margin-top: 24px;
+}
+.category-head {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 22px;
+  padding-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+.category-head p {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.food-info {
+  padding: 22px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.food-info > div {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.food-info b {
+  font:
+    600 21px "Playfair Display",
+    Georgia,
+    serif;
+  color: var(--tomato);
+}
+.food-info small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background: #f5e6df;
+  color: #93412d;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+.drinks {
+  border-top: 1px solid var(--line);
+  padding-top: 26px;
+}
+.drinks article {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.menu-bottom,
+.cta {
+  max-width: 1152px;
+  margin: 24px auto;
+  padding: 34px 28px;
+  border-radius: 3px;
+  background: var(--ink);
+  color: var(--paper);
+}
+.menu-bottom h2,
+.cta h2 {
+  font-size: 32px;
+}
+.menu-bottom .eyebrow,
+.cta .eyebrow {
+  color: #eca68f;
+}
+.menu-bottom .light,
+.cta .light {
+  border-color: transparent;
+}
+.cta small {
+  display: block;
+  margin-top: 20px;
+  font-size: 12px;
+}
