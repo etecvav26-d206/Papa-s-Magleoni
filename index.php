@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#171512">
 <title>Magleoni — Pizza de verdade</title>
 <meta name="description" content="Pizzas artesanais de fermentação lenta, assadas no forno e entregues quentinhas.">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="css/styles.css">
 <link rel="icon" type="image/png" href="images/logo-magleoni.png">
 </head>
 <body>
@@ -79,10 +79,9 @@
 <section class="ai-disclosure" id="declaracao-ia">
 <details>
 <summary>DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL</summary>
-<p>A IA da OpenAI, por meio do Codex, foi utilizada durante o desenvolvimento do projeto para auxiliar na identificação de erros em funções PHP, na revisão dos cadastros de pizzas, categorias e depoimentos e na implementação de melhorias. Também auxiliou na pesquisa dos requisitos, nos ajustes de navegação e na organização da documentação.</p>
-<p>O Gemini (Google) foi utilizado para auxiliar na produção do vídeo de montagem da pizza exibido nesta página.</p>
-<p>O ChatGPT Images 2 foi utilizado para auxiliar na criação da logo oficial da Papa's Magleoni.</p>
-<p>Os integrantes são responsáveis pelo conteúdo e pelas decisões do projeto.</p>
+<p>O Codex (OpenAI) foi utilizado como auxílio para localizar erros, revisar os cadastros e organizar os arquivos.</p>
+<p>O Gemini (Google) auxiliou na produção do vídeo e o ChatGPT Images 2 auxiliou na criação da logo.</p>
+<p>O projeto foi desenvolvido pelos alunos, responsáveis pelo conteúdo e pelas decisões tomadas.</p>
 <a class="text-link" href="docs/DECLARACAO-IA.md">Ler declaração completa →</a>
 </details>
 </section>
