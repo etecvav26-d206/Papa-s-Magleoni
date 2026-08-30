@@ -26,7 +26,18 @@
 
 </div>
 <div class="hero-image hero-video">
-<video tabindex="-1" disablepictureinpicture disableremoteplayback poster="images/pizza-margherita.png" autoplay muted loop playsinline preload="metadata" aria-label="Montagem de uma pizza Margherita">
+<video
+    tabindex="-1"
+    disablepictureinpicture
+    disableremoteplayback
+    poster="images/pizza-margherita.png"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-label="Montagem de uma pizza Margherita"
+>
 <source src="videos/montagem-margherita.mp4" type="video/mp4">Seu navegador não suporta vídeo em HTML5.</video>
 <div class="note">
 <b>01</b>
