@@ -291,7 +291,22 @@ unset($_SESSION['flash']);
     </table>
     </div>
 <?php else: ?>
-    <section class="admin-head"><div><p class="admin-kicker">CRUD completo</p><h1><?= e($action === 'create' ? $meta['new'] : ($action === 'delete' ? 'Excluir ' : 'Editar ') . $meta['singular']) ?></h1><p><?= $action === 'delete' ? 'Esta ação precisa de confirmação.' : 'Preencha os dados abaixo. Os campos opcionais estão indicados.' ?></p></div><a class="button-admin button-outline" href="<?= e(url($entity)) ?>">Voltar</a></section>
+    <section class="admin-head">
+        <div>
+            <p class="admin-kicker">CRUD completo</p>
+            <h1>
+                <?= e($action === 'create'
+                    ? $meta['new']
+                    : ($action === 'delete' ? 'Excluir ' : 'Editar ') . $meta['singular']) ?>
+            </h1>
+            <p>
+                <?= $action === 'delete'
+                    ? 'Esta ação precisa de confirmação.'
+                    : 'Preencha os dados abaixo. Os campos opcionais estão indicados.' ?>
+            </p>
+        </div>
+        <a class="button-admin button-outline" href="<?= e(url($entity)) ?>">Voltar</a>
+    </section>
     <?php if ($error): ?><p class="notice error" role="alert"><?= e($error) ?></p><?php endif; ?>
     <form class="admin-form" method="post">
     <?= csrf_field() ?>
@@ -304,20 +319,66 @@ unset($_SESSION['flash']);
             $required = $optional ? '' : 'required';
             $maxlength = isset($limits[$field]) ? 'maxlength="' . $limits[$field] . '"' : '';
         ?>
-        <div class="field"><label for="<?= e($field) ?>"><?= e($label) ?><?= $optional ? ' (opcional)' : '' ?></label>
+        <div class="field">
+            <label for="<?= e($field) ?>">
+                <?= e($label) ?><?= $optional ? ' (opcional)' : '' ?>
+            </label>
         <?php if (in_array($field, ['descricao', 'texto'], true)): ?>
-            <textarea id="<?= e($field) ?>" name="<?= e($field) ?>" <?= $required ?> <?= $maxlength ?>><?= e($item[$field] ?? '') ?></textarea>
+            <textarea
+                id="<?= e($field) ?>"
+                name="<?= e($field) ?>"
+                <?= $required ?>
+                <?= $maxlength ?>
+            ><?= e($item[$field] ?? '') ?></textarea>
         <?php elseif ($field === 'categoria_id'): ?>
-            <select id="categoria_id" name="categoria_id"><option value="">Sem categoria</option><?php foreach ($categories as $category): ?><option value="<?= e($category['id']) ?>" <?= (string) ($item[$field] ?? '') === (string) $category['id'] ? 'selected' : '' ?>><?= e($category['nome']) ?></option><?php endforeach; ?></select>
+            <select id="categoria_id" name="categoria_id">
+                <option value="">Sem categoria</option>
+                <?php foreach ($categories as $category): ?>
+                    <option
+                        value="<?= e($category['id']) ?>"
+                        <?= (string) ($item[$field] ?? '') === (string) $category['id'] ? 'selected' : '' ?>
+                    >
+                        <?= e($category['nome']) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         <?php elseif ($field === 'imagem'): ?>
-            <select id="imagem" name="imagem" required><?php foreach ($images as $path => $name): ?><option value="<?= e($path) ?>" <?= ($item[$field] ?? '') === $path ? 'selected' : '' ?>><?= e($name) ?></option><?php endforeach; ?></select>
+            <select id="imagem" name="imagem" required>
+                <?php foreach ($images as $path => $name): ?>
+                    <option
+                        value="<?= e($path) ?>"
+                        <?= ($item[$field] ?? '') === $path ? 'selected' : '' ?>
+                    >
+                        <?= e($name) ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         <?php else: ?>
-            <input id="<?= e($field) ?>" name="<?= e($field) ?>" value="<?= e($item[$field] ?? '') ?>" <?= $field === 'preco' ? 'type="number" min="0" max="99999999.99" step="0.01"' : ($field === 'nota' ? 'type="number" min="1" max="5" step="1"' : 'type="text"') ?> <?= $required ?> <?= $maxlength ?>>
-        <?php endif; ?></div>
+            <input
+                id="<?= e($field) ?>"
+                name="<?= e($field) ?>"
+                value="<?= e($item[$field] ?? '') ?>"
+                <?= $field === 'preco'
+                    ? 'type="number" min="0" max="99999999.99" step="0.01"'
+                    : ($field === 'nota'
+                        ? 'type="number" min="1" max="5" step="1"'
+                        : 'type="text"') ?>
+                <?= $required ?>
+                <?= $maxlength ?>
+            >
+        <?php endif; ?>
+        </div>
         <?php endforeach; ?>
     <?php endif; ?>
-    <div class="form-footer"><a class="button-admin button-outline" href="<?= e(url($entity)) ?>">Cancelar</a><button class="button-admin <?= $action === 'delete' ? 'button-danger' : '' ?>"><?= $action === 'delete' ? 'Excluir permanentemente' : 'Salvar ' . e($meta['singular']) ?></button></div>
+    <div class="form-footer">
+        <a class="button-admin button-outline" href="<?= e(url($entity)) ?>">Cancelar</a>
+        <button class="button-admin <?= $action === 'delete' ? 'button-danger' : '' ?>">
+            <?= $action === 'delete' ? 'Excluir permanentemente' : 'Salvar ' . e($meta['singular']) ?>
+        </button>
+    </div>
     </form>
 <?php endif; ?>
-</main><footer class="admin-footer">Papa's Magleoni · Painel administrativo escolar</footer>
-</body></html>
+</main>
+<footer class="admin-footer">Papa's Magleoni · Painel administrativo escolar</footer>
+</body>
+</html>
