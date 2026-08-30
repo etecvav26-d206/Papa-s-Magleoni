@@ -1,26 +1,21 @@
-# Referências e materiais
+# Referências
 
-## Orientações acadêmicas
+## Orientações do trabalho
 
-- [Repositório do professor](https://github.com/ronildo-ferreira/ronildo-human-layer): requisitos e orientações da atividade.
-- [Política de uso de IA](https://github.com/ronildo-ferreira/ronildo-human-layer/blob/main/01-EtecVAV/politica-de-uso-de-ia.md): transparência sobre ferramentas, etapas, finalidades e validação.
+- [Repositório do professor — turma 2D](https://github.com/ronildo-ferreira/ronildo-human-layer/tree/main/01-EtecVAV/2D/sweb-sistemas-web)
+- [Atividade de planejamento e proposta do site](https://github.com/Zaion-Alaric-Zanarelli/zaion-web-studio/blob/main/activities/php/act-php-002-crud-pdo-projeto.md)
+- [Política de uso de inteligência artificial](https://github.com/ronildo-ferreira/ronildo-human-layer/blob/main/01-EtecVAV/politica-de-uso-de-ia.md)
 
-## Documentação técnica para consulta
+## Documentação técnica
 
-- [PHP — PDO](https://www.php.net/manual/pt_BR/book.pdo.php): conexão e consultas ao banco.
-- [PHP — password_hash](https://www.php.net/manual/pt_BR/function.password-hash.php): armazenamento de hash de senha.
-- [MDN — CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout): organização de páginas e cartões.
-- [MDN — elemento video](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video): reprodução de vídeo em HTML.
+- [PHP — PDO](https://www.php.net/manual/pt_BR/book.pdo.php)
+- [PHP — password_hash](https://www.php.net/manual/pt_BR/function.password-hash.php)
+- [MDN — CSS Grid](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_grid_layout)
+- [MDN — elemento video](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/video)
 
-## Recursos presentes
+## Fontes
 
-O projeto usa PHP/PDO, MySQL ou MariaDB, HTML, CSS e JavaScript sem frameworks. As fontes públicas são Playfair Display e DM Sans. As cópias locais vieram do repositório Google Fonts, com licenças SIL Open Font License preservadas em `assets/fonts/`. Não há chamadas ao serviço Google Fonts durante o uso do site nem dependência de bibliotecas de ícones.
+- [DM Sans](https://github.com/google/fonts/tree/main/ofl/dmsans)
+- [Playfair Display](https://github.com/google/fonts/tree/main/ofl/playfairdisplay)
 
-As imagens e logos estão nas pastas de mídia do projeto. O ChatGPT Images 2 auxiliou na criação da logo oficial, preservada sem alterações nesta revisão. A origem e a autorização de uso de cada material devem ser conferidas pelo grupo antes de publicação.
-
-Segundo o responsável pelo projeto, o Gemini auxiliou na produção de `videos/montagem-margherita.mp4`. O modelo exato e os termos de uso devem ser conferidos no histórico da ferramenta. A [declaração de IA](../docs/DECLARACAO-IA.md) registra esse relato e o apoio à revisão técnica.
-
-## Fontes tipográficas
-
-- [DM Sans — arquivos e licença](https://github.com/google/fonts/tree/main/ofl/dmsans)
-- [Playfair Display — arquivos e licença](https://github.com/google/fonts/tree/main/ofl/playfairdisplay)
+As fontes são usadas localmente e suas licenças estão na pasta `fonts/`.
