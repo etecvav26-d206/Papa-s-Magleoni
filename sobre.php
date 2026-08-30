@@ -23,7 +23,11 @@
 <h2>Da massa à mesa,<br>
 <em>sem atalhos.</em>
 </h2>
-<p>Nascemos com uma ideia simples: preparar pizzas artesanais que as pessoas tenham vontade de repetir. Nossa massa descansa por 72 horas e os ingredientes são selecionados para trazer sabor de verdade a cada pedaço.</p>
+<p>
+    Nascemos com uma ideia simples: preparar pizzas artesanais que as pessoas
+    tenham vontade de repetir. Nossa massa descansa por 72 horas e os
+    ingredientes são selecionados para trazer sabor de verdade a cada pedaço.
+</p>
 <p>O resultado é uma pizza leve, generosa e feita para acompanhar seus melhores momentos.</p>
 </div>
 </section>
