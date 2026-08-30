@@ -4,7 +4,6 @@
 *.js text eol=lf
 *.md text eol=lf
 *.sql text eol=lf
-*.py text eol=lf
 *.png binary
 *.jpg binary
 *.mp4 binary
