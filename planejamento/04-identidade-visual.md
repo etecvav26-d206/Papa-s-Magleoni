@@ -6,7 +6,7 @@ O nome escolhido para o projeto foi **Papa's Magleoni**. A identidade visual lem
 
 A logo está em `images/logo-magleoni.png`. Ela apresenta a letra M junto de uma fatia de pizza e é usada no cabeçalho, rodapé, login e painel administrativo.
 
-O ChatGPT Images 2 foi utilizado como auxílio na criação da imagem, conforme informado na declaração de uso de IA.
+Usamos o ChatGPT Images 2 como apoio na criação da imagem, conforme informado na declaração de uso de IA.
 
 ## Cores principais
 

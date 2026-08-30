@@ -1,89 +1,121 @@
 # Papa's Magleoni
 
-**Sistemas Web · 2D · Etec VAV · 2026**
+**Sistemas Web · Turma 2D · Etec VAV · 2026**
 
-Site de uma pizzaria fictícia com cardápio dinâmico e painel administrativo. Desenvolvido em **PHP, PDO e MySQL/MariaDB**, com HTML, CSS e JavaScript, para execução local pelo **XAMPP**. Sem dependências de npm ou frameworks.
+Papa's Magleoni é o site de uma pizzaria fictícia criado para a disciplina de Sistemas Web. O projeto apresenta a pizzaria e seu cardápio para o cliente e possui uma área administrativa com três CRUDs completos.
 
-## Navegue pela documentação
+## Requisitos do trabalho
 
-| Documento | Conteúdo |
-| --- | --- |
-| [Instalação no XAMPP](docs/INSTALACAO.md) | Configuração, importação do banco, migração e senha administrativa |
-| [Declaração de IA](docs/DECLARACAO-IA.md) | Ferramenta, partes do trabalho, finalidades e validação |
-| [Planejamento](planejamento/01-tema-e-proposta.md) | Tema, público, identidade visual e estrutura do site |
+O projeto foi organizado de acordo com as orientações da turma 2D:
+
+- página `index.php` visível para o cliente;
+- três CRUDs administrativos: pizzas, categorias e depoimentos;
+- conexão com banco de dados usando PHP, PDO e MySQL/MariaDB;
+- layout responsivo seguindo o conceito Mobile First;
+- planejamento do tema, público-alvo, identidade visual e páginas;
+- organização do projeto e participação dos integrantes pelo GitHub.
 
 ## Funcionalidades
 
-- **Pizzas:** cadastrar, consultar, editar e excluir nome, descrição, categoria, preço, selo e imagem.
-- **Categorias:** organizar o cardápio; excluir uma categoria preserva suas pizzas como “Sem categoria”.
-- **Depoimentos:** gerenciar cliente, texto e nota, com exibição na página inicial.
-- **Administração:** login, hash de senha, sessão com expiração por inatividade, proteção CSRF e validação no servidor.
-- **Site:** páginas Início, Cardápio, A casa, Diferenciais e Contato com a mesma navegação e rodapé; menu móvel; vídeo automático, mudo e em loop.
-- **Banco:** dados de exemplo e migração que preserva os registros da estrutura anterior.
+- Site com as páginas Início, Cardápio, A casa, Diferenciais e Contato.
+- Cardápio carregado do banco e separado por categorias.
+- Vídeo automático, mudo e em loop na página inicial.
+- Menu adaptado para celular.
+- Login da área administrativa.
+- Cadastro, consulta, edição e exclusão de pizzas.
+- Cadastro, consulta, edição e exclusão de categorias.
+- Cadastro, consulta, edição e exclusão de depoimentos.
 
-O cardápio, os destaques e os depoimentos consultam o banco por PDO. Nomes de tabelas vêm de uma lista fixa; entradas de formulários usam parâmetros nas consultas e escape ao serem exibidas no HTML.
+## Tecnologias
 
-## Começar
+- PHP e PDO
+- MySQL ou MariaDB
+- HTML
+- CSS
+- JavaScript
 
-1. Coloque a pasta do projeto em `C:\xampp\htdocs\Papa-s-Magleoni` e inicie Apache e MySQL no XAMPP.
-2. Copie `config/local.example.php` para `config/local.php` e ajuste o acesso ao banco.
-3. Em banco novo, importe `database.sql` pelo phpMyAdmin. Para banco existente, faça backup e siga a [migração](docs/INSTALACAO.md).
-4. Para a demonstração local, o exemplo já configura usuário **admin** e senha **admin**. Para trocar, use `php scripts/gerar-senha.php` e atualize `ADMIN_PASSWORD_HASH`.
-5. Acesse [o site local](http://localhost/Papa-s-Magleoni/) ou [o painel](http://localhost/Papa-s-Magleoni/login.php).
+O projeto não usa frameworks ou npm.
 
-**Acesso demonstrativo: admin / admin. Use somente em ambiente local.** Antes de publicar na internet, substitua a senha por uma exclusiva e forte. Nunca envie `config/local.php`, senhas, logs ou dados pessoais ao GitHub. Se a pasta ou o banco já existirem, faça backup antes de alterar qualquer conteúdo.
+## Como executar
 
-## Organização dos arquivos
+1. Coloque a pasta em `C:\xampp\htdocs\Papa-s-Magleoni`.
+2. Inicie Apache e MySQL no XAMPP.
+3. Importe `database.sql` pelo phpMyAdmin.
+4. Copie `config/local.example.php` para `config/local.php`.
+5. Confira os dados do banco em `config/local.php`.
+6. Acesse `http://localhost/Papa-s-Magleoni/`.
+
+O acesso de demonstração ao painel é:
+
+- usuário: `admin`
+- senha: `admin`
+
+Mais detalhes estão em [docs/INSTALACAO.md](docs/INSTALACAO.md).
+
+## Banco de dados
+
+O arquivo `database.sql` cria o banco `papas_magleoni` e as tabelas:
+
+- `pizzas`;
+- `categorias`;
+- `depoimentos`.
+
+O relacionamento entre categorias e pizzas permite que uma categoria tenha várias pizzas. O arquivo também inclui alguns registros para demonstração.
+
+## Estrutura do projeto
 
 ```text
 Papa-s-Magleoni/
-├── index.php, cardapio.php, sobre.php, diferenciais.php, contato.php
-├── login.php, logout.php, crud.php
-├── gerenciar.php, categorias.php, depoimentos.php
-├── cadastro.php, editar.php, excluir.php  # rotas de compatibilidade
-├── assets/
-│   ├── css/                             # estilos públicos e administrativos
-│   ├── fonts/                           # fontes originais e licenças
-│   └── js/                              # navegação e interações
-├── config/                              # conexão PDO e exemplo de configuração
-├── includes/                            # cabeçalho/rodapé, consultas e componentes
-├── docs/                                # instalação, testes, entrega e IA
-├── planejamento/                        # proposta acadêmica
-├── images/, videos/                     # mídias utilizadas pelo site
-├── imagens/, logo/, referencias/        # materiais de identidade e referências
-├── scripts/                             # migração e geração de hash da senha
-├── database.sql
-├── .gitignore, .gitattributes
-└── LICENSE
+├── css/                  # estilos do site e do painel
+├── js/                   # menu, reserva demonstrativa e vídeo
+├── fonts/                # fontes e licenças
+├── images/               # logo e imagens das pizzas
+├── videos/               # vídeo da página inicial
+├── config/               # configuração e conexão com o banco
+├── includes/             # partes compartilhadas do PHP
+├── docs/                 # instalação e declaração de IA
+├── planejamento/         # etapas do planejamento solicitado
+├── referencias/          # fontes consultadas
+├── index.php             # página inicial
+├── cardapio.php          # cardápio público
+├── sobre.php             # página sobre a pizzaria
+├── diferenciais.php      # diferenciais da pizzaria
+├── contato.php           # contato e reserva demonstrativa
+├── gerenciar.php         # CRUD de pizzas
+├── categorias.php        # CRUD de categorias
+├── depoimentos.php       # CRUD de depoimentos
+├── crud.php              # operações usadas pelos três cadastros
+└── database.sql          # estrutura e dados iniciais do banco
 ```
 
-As imagens mantêm seus caminhos para preservar a compatibilidade com os registros existentes no banco. Cabeçalho e rodapé públicos são compartilhados em `includes/header_site.php` e `includes/footer_site.php`, evitando diferenças entre páginas.
+## Planejamento
 
-## Estado e limites
+Os documentos da pasta [planejamento](planejamento/) apresentam:
 
-Os três CRUDs foram verificados localmente. A versão preparada ainda precisa de revisão do grupo e demonstração no ambiente da apresentação.
-
-Contatos, depoimentos iniciais e empresa são fictícios. A reserva é apenas uma prévia no navegador, sem envio ou armazenamento. Bebidas são conteúdo fixo. Não há carrinho, pagamento, upload de imagens, recuperação de senha ou múltiplos usuários. A configuração local não deve ser exposta à internet como sistema comercial.
+- tema e proposta;
+- público-alvo;
+- aplicação de Mobile First;
+- identidade visual;
+- páginas e navegação;
+- recursos utilizados.
 
 ## Integrantes
 
-Contribuições registradas na documentação original; este registro não substitui a participação e a validação de cada integrante:
-
-| Integrante | Área registrada |
+| Integrante | Participação principal |
 | --- | --- |
 | Otávio Biazzi | Frontend, banco de dados e integração da logo |
-| Laura Gonçalves da Cruz | Identidade visual, planejamento e Markdown |
-| Pedro Godoi (phznorte777) | Backend PHP/PDO, CRUD e validação |
-| Pedro Miranda (M1randaPHM) | Layout, responsividade e testes |
+| Pedro Henrique Miranda | Layout, responsividade e CRUD de pizzas |
+| Laura Cristina Cruz | Identidade visual, planejamento e páginas públicas |
+| Pedro Henrique Dalle Molle Godoi | PHP, PDO, categorias e depoimentos |
 
 ## DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL
 
-Foi utilizado **Codex (OpenAI)** para auxiliar na identificação de erros em funções PHP, na revisão dos três CRUDs, na implementação de melhorias e nos testes do Papa's Magleoni. A assistência também incluiu pesquisa dos requisitos, ajustes de navegação e organização da documentação. O **Gemini (Google)** auxiliou na produção do vídeo da página inicial, e o **ChatGPT Images 2** auxiliou na criação da logo oficial.
+Durante o trabalho, usamos o Codex para tirar dúvidas, localizar erros e revisar os CRUDs. Também usamos o Gemini como apoio no vídeo e o ChatGPT Images 2 como apoio na criação da logo. Depois, conferimos o código, as páginas, o banco de dados e os três CRUDs no ambiente local.
 
-Durante essa revisão assistida, foram realizadas verificações automatizadas e inspeção local. A revisão, reprodução dos testes e aprovação pelos integrantes ainda precisam ser realizadas e registradas pelo grupo, responsável por compreender e explicar o projeto.
+A declaração completa está em [docs/DECLARACAO-IA.md](docs/DECLARACAO-IA.md) e também aparece de forma resumida na página inicial.
 
-A [declaração completa](docs/DECLARACAO-IA.md) relaciona as partes do trabalho, as finalidades e as verificações. Um resumo recolhível também está disponível ao final da página Início do site. O nome exato do modelo usado no vídeo deve ser conferido no histórico da ferramenta.
+## Referências
 
-## Licença e fontes
-
-Consulte [LICENSE](LICENSE) e [referências do projeto](referencias/referencias.md). A origem e a licença das imagens e do vídeo existentes devem ser conferidas pelo grupo antes de publicação pública. Os requisitos acadêmicos estão no [repositório do professor](https://github.com/ronildo-ferreira/ronildo-human-layer/tree/main/01-EtecVAV/2D/sweb-sistemas-web).
+- [Orientações da turma 2D](https://github.com/ronildo-ferreira/ronildo-human-layer/tree/main/01-EtecVAV/2D/sweb-sistemas-web)
+- [Política de uso de IA](https://github.com/ronildo-ferreira/ronildo-human-layer/blob/main/01-EtecVAV/politica-de-uso-de-ia.md)
+- [Referências técnicas do projeto](referencias/referencias.md)
