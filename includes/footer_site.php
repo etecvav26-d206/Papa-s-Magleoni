@@ -21,4 +21,4 @@
         <a href="index.php#declaracao-ia">Uso de IA</a>
     </small>
 </footer>
-<script src="assets/js/site.js" defer></script>
+<script src="js/site.js" defer></script>

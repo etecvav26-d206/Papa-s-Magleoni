@@ -26,7 +26,6 @@ if (reservationForm) {
   reservationForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = new FormData(reservationForm);
-    // Demonstração local: não envia dados ao número fictício da pizzaria.
     document.querySelector("#reserva-status").textContent =
       `Prévia da solicitação: ${data.get("nome")}, ${data.get("pessoas")}, ` +
       `data: ${data.get("data") || "a combinar"}. ` +
@@ -34,13 +33,10 @@ if (reservationForm) {
   });
 }
 
-// Vídeo decorativo: autoplay, mudo e em loop; sem controles de reprodução.
-// A política de autoplay do navegador ainda pode impedir a reprodução.
 const heroVideo = document.querySelector(".hero-video video");
 if (heroVideo) {
   const playVideo = () =>
     heroVideo.play().catch(() => {
-      // O poster permanece visível quando o navegador bloqueia autoplay.
     });
   playVideo();
   document.addEventListener("visibilitychange", () => {
