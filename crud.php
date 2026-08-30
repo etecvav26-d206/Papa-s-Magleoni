@@ -77,9 +77,18 @@ $limits = [
 
 function url(string $entity, string $action = 'list', ?int $id = null): string
 {
-    return 'crud.php?' . http_build_query(array_filter([
-        'entity' => $entity, 'action' => $action, 'id' => $id,
+    $pages = [
+        'pizzas' => 'gerenciar.php',
+        'categorias' => 'categorias.php',
+        'depoimentos' => 'depoimentos.php',
+    ];
+
+    $query = http_build_query(array_filter([
+        'action' => $action,
+        'id' => $id,
     ], fn($value) => $value !== null));
+
+    return $pages[$entity] . '?' . $query;
 }
 
 if (in_array($action, ['edit', 'delete'], true)) {
@@ -208,7 +217,7 @@ unset($_SESSION['flash']);
 ?>
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?= e($meta['title']) ?> — Administração Magleoni</title><link rel="stylesheet" href="assets/css/admin.css"><link rel="icon" type="image/png" href="images/logo-magleoni.png"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?= e($meta['title']) ?> — Administração Magleoni</title><link rel="stylesheet" href="css/admin.css"><link rel="icon" type="image/png" href="images/logo-magleoni.png"></head>
 <body>
 <header class="admin-bar">
     <a class="admin-brand" href="index.php">
