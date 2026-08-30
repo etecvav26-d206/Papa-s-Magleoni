@@ -1,0 +1,98 @@
+/* Fontes usadas no projeto; licenças na pasta fonts. */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/dm-sans.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../fonts/playfair-display.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../fonts/playfair-display-italic.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+/* Papa's Magleoni — estilos públicos, organizados por componente. */
+/* Regras gerais, cores e tipografia ficam no começo para facilitar a leitura. */
+:root {
+  --ink: #171512;
+  --paper: #f4efe7;
+  --cream: #fffaf2;
+  --tomato: #bd3d26;
+  --muted: #615d57;
+  --line: #d9d2c8;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    15px/1.65 "DM Sans",
+    sans-serif;
+}
+a {
+  color: var(--tomato);
+}
+img {
+  max-width: 100%;
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  margin: 0 0 18px;
+}
+h1 {
+  font-size: 46px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+em {
+  color: var(--tomato);
+  font-style: italic;
+}
+p {
+  margin: 0 0 18px;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--tomato);
+  outline-offset: 4px;
+}
+.eyebrow {
+  color: var(--tomato);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
