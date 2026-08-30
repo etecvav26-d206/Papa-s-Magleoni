@@ -2,10 +2,10 @@
     <a class="brand" href="index.php" aria-label="Magleoni — página inicial">
         <span class="logo-seal">
             <img
-                src="images/logo-magleoni.png"
-                alt="Logo oficial Papa's Magleoni"
-                width="72"
-                height="72"
+            src="images/logo-magleoni.png"
+            alt="Logo oficial Papa's Magleoni"
+            width="72"
+            height="72"
             >
         </span>
         <span>
