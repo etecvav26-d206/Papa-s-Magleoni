@@ -1,17 +1,24 @@
-# Estrutura atual do site
+# Estrutura do site
 
-Esta versão é um site PHP com várias páginas renderizadas no servidor; não é uma SPA.
+## Páginas públicas
 
 | Página | Conteúdo |
 | --- | --- |
-| index.php | Apresentação, vídeo, três primeiras pizzas cadastradas, resumo do projeto, depoimentos, contato e declaração de IA |
-| cardapio.php | Todas as pizzas agrupadas por categoria do banco; bebidas demonstrativas fixas |
-| sobre.php | História fictícia e quantidade real de sabores |
-| diferenciais.php | Informações institucionais |
-| contato.php | Contatos fictícios e prévia local de solicitação de reserva |
-| login.php | Acesso administrativo |
-| crud.php | Criar, consultar, editar e excluir pizzas, categorias e depoimentos |
+| `index.php` | Apresentação, vídeo, pizzas em destaque, depoimentos e contato |
+| `cardapio.php` | Pizzas separadas por categoria |
+| `sobre.php` | História fictícia da pizzaria |
+| `diferenciais.php` | Características da pizzaria |
+| `contato.php` | Contatos e demonstração de reserva |
 
-O menu comum liga as páginas públicas. O rodapé oferece acesso ao painel. A navegação móvel abre por botão e fecha por Escape ou seleção de link. `categorias.php`, `depoimentos.php` e `gerenciar.php` reaproveitam o controlador dos cadastros.
+## Área administrativa
 
-Modelo: categorias (1) → pizzas (N); depoimentos independentes. Ao excluir uma categoria, suas pizzas continuam cadastradas sem categoria. Veja o README para instalar e migrar o banco.
+| Página | Função |
+| --- | --- |
+| `login.php` | Entrada no painel |
+| `gerenciar.php` | CRUD de pizzas |
+| `categorias.php` | CRUD de categorias |
+| `depoimentos.php` | CRUD de depoimentos |
+
+As páginas públicas compartilham cabeçalho e rodapé. Os três cadastros administrativos usam as operações de `crud.php`.
+
+No banco, uma categoria pode possuir várias pizzas. Os depoimentos são independentes.
